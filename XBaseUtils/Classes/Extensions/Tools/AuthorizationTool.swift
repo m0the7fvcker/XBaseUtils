@@ -70,7 +70,7 @@ open class AuthorizationTool: NSObject {
     }
     
     private class func isAllowedCamera() -> Bool{
-        let videoAuthStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+        let videoAuthStatus = AVCaptureDevice.authorizationStatus(for: .video)
         if videoAuthStatus == AVAuthorizationStatus.authorized {
             return true
         }else {
@@ -79,7 +79,7 @@ open class AuthorizationTool: NSObject {
     }
     
     private class func isAllowedMicroPhone() -> Bool {
-        let videoAuthStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.audio)
+        let videoAuthStatus = AVCaptureDevice.authorizationStatus(for: .audio)
         if videoAuthStatus == AVAuthorizationStatus.authorized{
             return true
         }else {
@@ -119,7 +119,7 @@ open class AuthorizationTool: NSObject {
     }
     
     private class func isAllowedCalendar() -> Bool {
-        let state = EKEventStore.authorizationStatus(for: EKEntityType.event)
+        let state = EKEventStore.authorizationStatus(for: .event)
         if state ==  EKAuthorizationStatus.authorized {
             return true
         }
@@ -128,7 +128,7 @@ open class AuthorizationTool: NSObject {
     
     private class func isAllowedContacts() -> Bool {
         if #available(iOS 9.0, *) {
-            let status = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
+            let status = CNContactStore.authorizationStatus(for: .contacts)
             if status == CNAuthorizationStatus.authorized {
                 return true
             }

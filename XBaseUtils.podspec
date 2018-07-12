@@ -36,7 +36,7 @@ TODO: Add long description of the pod here.
   #   'BaseUtils' => ['BaseUtils/Assets/*.png']
   # }
 
-  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'Pod/Classes/**/*'
   s.frameworks = 'UIKit', 'Foundation'
   s.dependency 'DeviceGuru'
 end
