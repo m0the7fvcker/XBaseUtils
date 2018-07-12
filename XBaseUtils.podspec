@@ -30,13 +30,13 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'BaseUtils/Classes/**/*'
+  s.source_files = 'XBaseUtils/Classes/**/*'
   
   # s.resource_bundles = {
-  #   'BaseUtils' => ['BaseUtils/Assets/*.png']
+  #   'XBaseUtils' => ['XBaseUtils/Assets/*.png']
   # }
 
-  s.public_header_files = 'Pod/Classes/**/*'
+  # s.public_header_files = 'XBaseUtils/Classes/**/*'
   s.frameworks = 'UIKit', 'Foundation'
   s.dependency 'DeviceGuru'
 end
