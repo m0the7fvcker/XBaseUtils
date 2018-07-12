@@ -190,7 +190,7 @@ extension String {
         
         let size = CGSize(width:fixedWidth, height:CGFloat.greatestFiniteMagnitude)
         let text = self as NSString
-        let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [.font: font], context: nil)
         
         return rect.size.height
     }
@@ -204,7 +204,7 @@ extension String {
         
         let size = CGSize(width:CGFloat.greatestFiniteMagnitude, height:0)
         let text = self as NSString
-        let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [.font: font], context: nil)
         
         return rect.size.width
     }
