@@ -181,6 +181,19 @@ extension String {
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 extension String {
     
+    /// 获取文本Size
+    public func getTextSize(font : UIFont = UIFont.systemFont(ofSize: 18), limitSize: CGSize) -> CGSize {
+        
+        guard self.count > 0 else {
+            return .zero
+        }
+        
+        let text = self as NSString
+        let rect = text.boundingRect(with: limitSize, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
+        
+        return rect.size
+    }
+    
     /// 获取文本高度
     public func getTextHeight(font : UIFont = UIFont.systemFont(ofSize: 18), fixedWidth : CGFloat) -> CGFloat {
         
@@ -196,7 +209,7 @@ extension String {
     }
     
     /// 获取文本宽度
-    public func getTextWidth(font : UIFont = UIFont.systemFont(ofSize: 17)) -> CGFloat {
+    public func getTextWidth(font : UIFont = UIFont.systemFont(ofSize: 18)) -> CGFloat {
         
         guard self.count > 0 else {
             return 0

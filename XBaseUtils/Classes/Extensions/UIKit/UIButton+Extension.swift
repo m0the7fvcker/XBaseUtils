@@ -8,13 +8,20 @@
 import UIKit
 
 fileprivate var kUIButtonTimeIntervalEnableKey = "kUIButtonTimeIntervalEnableKey"
-fileprivate var kUIButtonExpandTouchAreaKey    = "kUIButtonExpandTouchAreaKey"
+fileprivate var kUIButtonExpandTouchAreaKey    = "kUIButtonExpandTouc11111hAreaKey"
 
 public struct UIButtonExpandArea {
-    public var left: CGFloat = 20
-    public var right: CGFloat = 20
-    public var top: CGFloat = 20
-    public var bottom: CGFloat = 20
+    public var left: CGFloat
+    public var right: CGFloat
+    public var top: CGFloat
+    public var bottom: CGFloat
+    
+    public init(left: CGFloat = 20, right: CGFloat = 20, top: CGFloat = 20, bottom: CGFloat = 20) {
+        self.left = left
+        self.right = right
+        self.top = top
+        self.bottom = bottom
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -118,7 +125,7 @@ extension UIButton {
     ///扩展点击区域
     public var expandTouchArea: UIButtonExpandArea? {
         set {
-            objc_setAssociatedObject(self, &kUIButtonExpandTouchAreaKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
+            objc_setAssociatedObject(self, &kUIButtonExpandTouchAreaKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get {
             return objc_getAssociatedObject(self, &kUIButtonExpandTouchAreaKey) as? UIButtonExpandArea
@@ -126,7 +133,6 @@ extension UIButton {
     }
     
     open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-//        expandTouchArea = UIButtonExpandArea(left: 20, right: 20, top: 20, bottom: 20)
         if let expandArea = expandTouchArea {
             return UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(-expandArea.top, -expandArea.left, -expandArea.bottom, -expandArea.right)).contains(point)
         }

@@ -11,12 +11,13 @@ fileprivate let labelCopyAbleKey = "labelCopyAbleKey"
 
 extension UILabel {
     
-    public convenience init(title: String?,
+    public convenience init(frame: CGRect? = .zero,
+                            title: String?,
                         titleFont: UIFont,
                             align: NSTextAlignment = .center,
                             color: UIColor = .black,
                      numberOfLine: Int = 1) {
-        self.init()
+        self.init(frame: frame!)
         text = title
         textAlignment = align
         textColor = color

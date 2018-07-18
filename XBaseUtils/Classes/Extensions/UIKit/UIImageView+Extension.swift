@@ -10,7 +10,7 @@ import Kingfisher
 
 extension UIImageView {
     
-    func setImageWithUrlString(_ urlString: String?, placeHolder: String?) {
+    public func setImageWithUrlString(_ urlString: String?, placeHolder: String?) {
         let url = urlString ?? ""
         let image = placeHolder ?? ""
         
