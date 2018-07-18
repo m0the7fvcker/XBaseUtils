@@ -10,6 +10,7 @@ import UIKit
 fileprivate let labelCopyAbleKey = "labelCopyAbleKey"
 
 extension UILabel {
+    
     public convenience init(title: String?,
                         titleFont: UIFont,
                             align: NSTextAlignment = .center,

@@ -40,4 +40,5 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'XBaseUtils/Classes/**/*'
   s.frameworks = 'UIKit', 'Foundation'
   s.dependency 'DeviceGuru'
+  s.dependency 'Kingfisher'
 end
