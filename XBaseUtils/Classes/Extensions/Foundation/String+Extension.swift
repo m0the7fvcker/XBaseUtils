@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CommonCryptoModule
 
 extension String {
     
@@ -108,20 +109,20 @@ extension String {
     }
     
     /// md5加密
-//    func md5() -> String {
-//        let str = self.cString(using: .utf8)
-//        let strLen = CUnsignedInt(self.lengthOfBytes(using: .utf8))
-//        let digestLen = Int(16)
-//        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: digestLen)
-//        CC_MD5(str,strLen,result)
-//        let hash = NSMutableString()
-//
-//        for i in 0..<digestLen{
-//            hash.appendFormat("%02x", result[i])
-//        }
-//
-//        return hash as String
-//    }
+    func md5() -> String {
+        let str = self.cString(using: .utf8)
+        let strLen = CUnsignedInt(self.lengthOfBytes(using: .utf8))
+        let digestLen = Int(16)
+        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: digestLen)
+        CC_MD5(str,strLen,result)
+        let hash = NSMutableString()
+
+        for i in 0..<digestLen{
+            hash.appendFormat("%02x", result[i])
+        }
+
+        return hash as String
+    }
     
     /// 是否是邮箱
     public var isEmail: Bool {

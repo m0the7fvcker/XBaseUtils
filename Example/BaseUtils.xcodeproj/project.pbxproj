@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07A013CC2110572B001ADD59 /* XBaseUtils.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 07A013CB2110572B001ADD59 /* XBaseUtils.podspec */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		05D68FC4082D9826131ED7F7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		069E8C351F1A300D45F6A8DD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		076B9EA920F4577F00D7AE39 /* BaseUtils_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseUtils_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		07A013CB2110572B001ADD59 /* XBaseUtils.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = XBaseUtils.podspec; path = ../XBaseUtils.podspec; sourceTree = "<group>"; };
 		3F12AF0298D11B6B1C10EB98 /* Pods-BaseUtils_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseUtils_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseUtils_Example/Pods-BaseUtils_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		47B487D35DB3F4B527E72E16 /* Pods-BaseUtils_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseUtils_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseUtils_Tests/Pods-BaseUtils_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DF456E0599CF674EC297579 /* Pods-BaseUtils_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseUtils_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseUtils_Tests/Pods-BaseUtils_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -46,7 +48,6 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		621C01245F83098E485935D4 /* Pods-BaseUtils_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseUtils_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseUtils_Example/Pods-BaseUtils_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B4F9554F004BAB4469ED3C61 /* Pods_BaseUtils_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseUtils_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7202FAFE887A50EE80DF37D /* BaseUtils.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BaseUtils.podspec; path = ../BaseUtils.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C2F67961DA7D33E6EAB36A44 /* Pods_BaseUtils_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseUtils_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,7 +135,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				B7202FAFE887A50EE80DF37D /* BaseUtils.podspec */,
+				07A013CB2110572B001ADD59 /* XBaseUtils.podspec */,
 				069E8C351F1A300D45F6A8DD /* README.md */,
 				05D68FC4082D9826131ED7F7 /* LICENSE */,
 			);
@@ -249,6 +250,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				07A013CC2110572B001ADD59 /* XBaseUtils.podspec in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,12 +272,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BaseUtils_Example/Pods-BaseUtils_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CommonCryptoModule/CommonCryptoModule.framework",
 				"${BUILT_PRODUCTS_DIR}/DeviceGuru/DeviceGuru.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/XBaseUtils/XBaseUtils.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CommonCryptoModule.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceGuru.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XBaseUtils.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

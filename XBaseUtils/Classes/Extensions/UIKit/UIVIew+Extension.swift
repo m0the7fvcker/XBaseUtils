@@ -11,40 +11,52 @@ fileprivate var kUIViewDimBackgroundView = "UIViewDimBackgroundView"
 fileprivate let kUIViewModalTimeinterval: TimeInterval = 0.25
 
 public enum UIViewGradientDirection : Int {
-    case Top                    //向上
-    case Bottom                 //向下
-    case Left                   //向左
-    case Right                  //向右
-    case TopLeftToBottomRight   //左上角到右下角
-    case TopRightToBottomLeft   //右上角到左下角
-    case BottomLeftToTopRight   //左下角到右上角
-    case BottomRightToTopLeft   //右下角到左上角
+    case top                    //向上
+    case bottom                 //向下
+    case left                   //向左
+    case right                  //向右
+    case topLeftToBottomRight   //左上角到右下角
+    case topRightToBottomLeft   //右上角到左下角
+    case bottomLeftToTopRight   //左下角到右上角
+    case bottomRightToTopLeft   //右下角到左上角
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 extension UIView {
     public var x: CGFloat {
-        return frame.origin.x
+        set {
+            frame.origin.x = newValue
+        }
+        get {
+            return frame.origin.x
+        }
     }
     
     public var y: CGFloat {
-        return frame.origin.y
+        set {
+            frame.origin.y = newValue
+        }
+        get {
+            return frame.origin.y
+        }
     }
     
     public var width: CGFloat {
-        return frame.size.width
+        set {
+            frame.size.width = newValue
+        }
+        get {
+            return frame.size.width
+        }
     }
     
     public var height: CGFloat {
-        return frame.size.height
-    }
-    
-    public var centerX: CGFloat {
-        return CGFloat(self.center.x)
-    }
-    
-    public var centerY: CGFloat {
-        return CGFloat(self.center.y)
+        set {
+            frame.size.height = newValue
+        }
+        get {
+            return frame.size.height
+        }
     }
     
     ///获取父控制器
@@ -135,7 +147,7 @@ extension UIView {
     ///
     /// - Parameter colors: 给 cgcolor 数组
     public func addGradientLayer(colors: [UIColor]) {
-        self.addGradientLayer(colors: colors, direction: .Bottom)
+        self.addGradientLayer(colors: colors, direction: .bottom)
     }
     
     public func addGradientLayer(colors: [UIColor], direction : UIViewGradientDirection){
@@ -147,28 +159,28 @@ extension UIView {
         gradientLayer.locations = [0.0, 1.0]
         
         switch direction {
-        case .Top:
+        case .top:
             gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
             gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
-        case .Bottom:
+        case .bottom:
             gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
             gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
-        case .Left:
+        case .left:
             gradientLayer.startPoint = CGPoint(x: 1.0, y: 0.5)
             gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.5)
-        case .Right:
+        case .right:
             gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
             gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
-        case .TopLeftToBottomRight:
+        case .topLeftToBottomRight:
             gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
             gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        case .TopRightToBottomLeft:
+        case .topRightToBottomLeft:
             gradientLayer.startPoint = CGPoint(x: 1.0, y: 0.0)
             gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
-        case .BottomLeftToTopRight:
+        case .bottomLeftToTopRight:
             gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
             gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
-        case .BottomRightToTopLeft:
+        case .bottomRightToTopLeft:
             gradientLayer.startPoint = CGPoint(x: 1.0, y: 1.0)
             gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.0)
         }
