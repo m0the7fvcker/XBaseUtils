@@ -28,7 +28,7 @@ Foundation:
 
 - Color+Extension:颜色扩展、十六进制、RGB等
 
-- Date+Extension:日期扩展、年月日、字符串互转
+- Date+Extension:日期扩展、年月日、字符串互转
 
 - Dictionary+Extension:字典扩展、jSON互转、是否有Key等
 
@@ -42,7 +42,7 @@ Tools:
 
 - DeviceTool：获取设备信息
 
-- LoadTool:load方法实现工具
+- LoadTool:load方法实现工具
 
 - RegularTool：正则检测工具
 
