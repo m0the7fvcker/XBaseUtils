@@ -23,12 +23,12 @@ private func hexToDec(hex : String) -> CGFloat {
 extension UIColor {
     
     /// 随机色
-    public func randomColor(randomAlpha: Bool) -> UIColor {
+    public class func randomColor(randomAlpha: Bool = false) -> UIColor {
         let randomRed = arc4random() % 255
         let randomGreen = arc4random() % 255
         let randomBlue = arc4random() % 255
         let alpha = randomAlpha ? arc4random() % 255 : 1
-        return UIColor(red: CGFloat(randomRed) / 225.0, green: CGFloat(randomGreen)/225.0, blue: CGFloat(randomBlue)/225.0, alpha: randomAlpha ? CGFloat(alpha) : 0)
+        return UIColor(red: CGFloat(randomRed) / 225.0, green: CGFloat(randomGreen)/225.0, blue: CGFloat(randomBlue)/225.0, alpha: randomAlpha ? CGFloat(alpha) : 1)
     }
     
     /// 十六进制颜色
